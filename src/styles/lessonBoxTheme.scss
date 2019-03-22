@@ -1,0 +1,56 @@
+@import 'colors.scss';
+
+body {
+    margin: 0;
+    font-family: 'Roboto', arial;
+
+    .flex-spacer {
+        flex: 1;
+    }
+
+    mat-sidenav-content {
+        .title {
+            font-size: 25px;
+        }
+        
+        .menu-button {
+            margin-right: 10px;
+        }
+        
+        button {
+            background-color: transparent;
+        }
+        
+        .side-nav {
+            height: 100vh;
+        }
+        
+        .home-container {
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .mat-icon-button {
+            border-radius: 100%;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $lightShadow;
+            }
+        }
+    }
+
+    .mat-drawer-backdrop {
+        background-color: $shadow;
+        transition: all 0.3s ease-in-out;
+    }
+
+    mat-sidenav {
+        width: 300px;
+        background-color: $focusedBackground;
+        box-shadow: 10px 0 30px $shadow;
+    }
+}

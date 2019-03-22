@@ -1,0 +1,29 @@
+<div class="lesson-content">
+	<mat-toolbar>
+		{{ content.title }}
+	</mat-toolbar>
+	<mat-card>
+		<mat-card-content>
+			<p>{{ content.body }}</p>
+		</mat-card-content>
+	</mat-card>
+	<mat-card>
+		<mat-card-header>
+			<mat-card-title>
+				{{ content.example }}
+			</mat-card-title>
+		</mat-card-header>
+		<mat-card-content>
+			<p>{{ content.description }}</p>
+		</mat-card-content>
+	</mat-card>
+	<mat-card>
+		<mat-card-content>
+			<textarea class="code-editor"></textarea>
+		</mat-card-content>
+		<mat-card-actions align="end">
+			<button mat-button>Reset</button>
+			<button mat-raised-button color="primary" >Submit</button>
+		</mat-card-actions>
+	</mat-card>
+</div>

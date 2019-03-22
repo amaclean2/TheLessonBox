@@ -9,6 +9,8 @@ export class LoginComponent {
 
   email: string = '';
   password: string = '';
+  errorMessage: string = '';
+  successMessage: string = '';
 
   validateInput(): void {
     console.log(this.email, this.password);

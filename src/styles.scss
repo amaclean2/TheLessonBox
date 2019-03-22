@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+mat-sidenav {
+    width: 300px;
+}
+
+.mat-option-text {
+    font-size: 15px;
+}
+.mat-select-panel-wrap .mat-select-panel {
+    .mat-option, .mat-option-text {
+        line-height: 2em;
+        height: 2em;
+    }
+}
+
+.code-editor {
+    width: 100%;
+    height: 50vh;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    resize: none;
+    font-family: monospace;
+    font-size: 14px;
+    outline: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 50px;
+    box-sizing: border-box;
+}
+
+mat-card {
+    margin: 10px 50px;
+}

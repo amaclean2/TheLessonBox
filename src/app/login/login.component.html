@@ -4,13 +4,14 @@
 	</div>
 	<label class="email-field">
 		<span class="input-desc">email</span>
-		<input type="email" placeholder="email" [(ngModel)]="email" />
+		<input type="email" placeholder="email" [(ngModel)]="email" required/>
 	</label>
 	<label class="password-field">
 		<span class="input-desc">password</span>
-		<input type="password" placeholder="password" [(ngModel)]="password" />
+		<input type="password" placeholder="password" [(ngModel)]="password" required/>
+		<span class="error">{{ errorMessage }}</span>
+		<span class="success">{{ successMessage }}</span>
 	</label>
-	<label class="submit-field">
-		<a routerLink="/home" (click)="validateInput">Login</a>
-	</label>
+	<!-- <input type="submit" (click)="validateInput()"> -->
+	<a routerLink="/home">Login</a>
 </div>
