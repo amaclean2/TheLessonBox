@@ -1,0 +1,8 @@
+<div class="selector">
+	<mat-list>
+		<h2 mat-subheader>Lessons</h2>
+		<mat-list-item *ngFor="let lesson of lessons">
+			<button mat-button routerLink="{{ '/lesson/' + lesson.id }}">{{ lesson.title }}</button>
+		</mat-list-item>
+	</mat-list>
+</div>

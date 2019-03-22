@@ -9,7 +9,8 @@ import { MatToolbarModule,
          MatSidenavModule,
          MatSelectModule,
          MatMenuModule,
-         MatCardModule } from '@angular/material';
+         MatCardModule,
+         MatListModule } from '@angular/material';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -21,13 +22,15 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ContentComponent } from './content/content.component';
+import { SelectorComponent } from './selector/selector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    ContentComponent
+    ContentComponent,
+    SelectorComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -43,7 +46,8 @@ import { ContentComponent } from './content/content.component';
     MatSidenavModule,
     MatSelectModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
