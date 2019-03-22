@@ -23,7 +23,8 @@ export class HomeComponent implements OnInit {
   userOptions: UserOption[] = [
     { value: 'edit', viewValue: 'Edit Details' },
     { value: 'stats', viewValue: 'See Stats' },
-    { value: 'friends', viewValue: 'Compare Against Friends' }
+    { value: 'friends', viewValue: 'Compare Against Friends' },
+    { value: 'logout', viewValue: 'Log Out'}
   ]
 
   ngOnInit() {
