@@ -1,17 +1,13 @@
 <div class="login-page">
-	<div class="page-header">
-		<h2>Login to TheLessonBox</h2>
-	</div>
-	<label class="email-field">
-		<span class="input-desc">email</span>
-		<input type="email" placeholder="email" [(ngModel)]="email" required/>
-	</label>
-	<label class="password-field">
-		<span class="input-desc">password</span>
-		<input type="password" placeholder="password" [(ngModel)]="password" required/>
-		<span class="error">{{ errorMessage }}</span>
-		<span class="success">{{ successMessage }}</span>
-	</label>
-	<!-- <input type="submit" (click)="validateInput()"> -->
-	<a routerLink="/home">Login</a>
+	<mat-card align="center">
+		<mat-card-title>Login to The Lesson Box</mat-card-title>
+		<mat-card-content>
+			<button
+				mat-raised-button
+				color="accent"
+				(click)="googleLogin()">
+				Sign In With Google
+			</button>
+		</mat-card-content>
+	</mat-card>
 </div>

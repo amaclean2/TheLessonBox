@@ -2,7 +2,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 mat-sidenav {
-    width: 300px;
+    width: 260px;
 }
 
 .mat-option-text {
@@ -38,4 +38,8 @@ mat-card {
     margin: 10px auto;
     width: 90%;
     max-width: 1000px;
+}
+
+.flex-spacer {
+    flex: 1;
 }

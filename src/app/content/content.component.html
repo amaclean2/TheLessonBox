@@ -1,28 +1,28 @@
 <div class="lesson-content">
 	<mat-toolbar>
-		{{ lesson.title }}
+		{{ lesson.payload.data().title }}
 	</mat-toolbar>
 	<mat-card>
 		<mat-card-content>
-			<p>{{ lesson.body }}</p>
+			<p>{{ lesson.payload.data().body }}</p>
 		</mat-card-content>
 	</mat-card>
 	<mat-card>
 		<mat-card-header>
 			<mat-card-title>
-				{{ lesson.example }}
+				{{ lesson.payload.data().example }}
 			</mat-card-title>
 		</mat-card-header>
 		<mat-card-content>
-			<p>{{ lesson.description }}</p>
+			<p>{{ lesson.payload.data().description }}</p>
 		</mat-card-content>
 	</mat-card>
-	<mat-card class="editor-card" >
+	<mat-card class="editor-card" *ngIf="lesson.payload.data().isExercise">
 		<mat-card-content>
-			<textarea class="code-editor"></textarea>
+			<textarea class="code-editor">{{ lesson.payload.data().exercise }}</textarea>
 		</mat-card-content>
 		<mat-card-actions align="end">
-			<button mat-button>Reset</button>
+			<button mat-raised-button color="primary">Run</button>
 			<button mat-raised-button color="accent" >Submit</button>
 		</mat-card-actions>
 	</mat-card>

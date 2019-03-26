@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyABltlh2rscg5C03lnrvD1EGmL2EnlKLw0",
-    authDomain: "the-lesson-box.firebaseapp.com",
-    databaseURL: "https://the-lesson-box.firebaseio.com",
-    projectId: "the-lesson-box",
-    storageBucket: "the-lesson-box.appspot.com",
-    messagingSenderId: "630221358592"
+    apiKey: "AIzaSyDTM3Qx33PRnEQv3AbXsfel0VJGop6XukM",
+    authDomain: "thelessonbox-53ca3.firebaseapp.com",
+    databaseURL: "https://thelessonbox-53ca3.firebaseio.com",
+    projectId: "thelessonbox-53ca3",
+    storageBucket: "thelessonbox-53ca3.appspot.com",
+    messagingSenderId: "931320020456"
   }
 };
 

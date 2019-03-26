@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LESSONS } from '../dummyDataList';
+import { LessonService } from '../lesson.service';
+import { Lesson } from '../lesson';
 
 @Component({
   selector: 'app-selector',
@@ -8,11 +9,19 @@ import { LESSONS } from '../dummyDataList';
 })
 export class SelectorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private lessonService: LessonService) { }
 
-  lessons = LESSONS
+  lessons: Array<any>;
+
+  getLessons(): void {
+    this.lessonService.getLessons()
+      .subscribe(lessons => {
+        this.lessons = lessons.reverse();
+      });
+  }
 
   ngOnInit() {
+    this.getLessons();
   }
 
 }

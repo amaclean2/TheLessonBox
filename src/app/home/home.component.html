@@ -4,7 +4,12 @@
 			<mat-toolbar-row>
 					<button mat-button [matMenuTriggerFor]="menu">{{ username }}</button>
 					<mat-menu #menu="matMenu">
-						<button mat-menu-item *ngFor="let userOption of userOptions">{{ userOption.viewValue }}</button>
+						<button
+							mat-menu-item
+							(click)="option.event()"
+							*ngFor="let option of userOptions">
+							{{ option.viewValue }}
+						</button>
 					</mat-menu>
 			</mat-toolbar-row>
 		</mat-toolbar>
@@ -14,12 +19,19 @@
 	<mat-sidenav-content>
 		<mat-toolbar color="primary">
 			<mat-toolbar-row>	
-				<button mat-icon-button class="menu-button" (click)="sidenav.toggle()">
+				<button
+					mat-icon-button
+					class="menu-button"
+					*ngIf="username"
+					(click)="sidenav.toggle()">
 					<mat-icon>menu</mat-icon>
 				</button>
 				<span class="title">{{ title }}</span>
 			</mat-toolbar-row>
 		</mat-toolbar>
-		<app-content></app-content>
+		<app-content
+			*ngIf="lesson"
+			[lesson]="lesson">
+		</app-content>
 	</mat-sidenav-content>
 </mat-sidenav-container>

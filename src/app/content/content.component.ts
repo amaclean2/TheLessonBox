@@ -1,18 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { LESSONS } from '../dummyDataList';
+import { Component, Input } from '@angular/core';
+
+import { Lesson } from '../lesson';
 
 @Component({
 	selector: 'app-content',
 	templateUrl: './content.component.html',
-	styleUrls: ['./content.component.css']
+	styleUrls: ['./content.component.scss']
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent {
 
-	constructor() { }
-
-	lesson = LESSONS[0];
-
-	ngOnInit() {
-	}
+	@Input() lesson;
 
 }
