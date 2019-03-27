@@ -1,8 +1,8 @@
 <div class="lesson-content">
-	<mat-toolbar>
-		{{ lesson.payload.data().title }}
-	</mat-toolbar>
 	<mat-card>
+		<mat-card-title>
+			{{ lesson.payload.data().title }}
+		</mat-card-title>
 		<mat-card-content>
 			<p>{{ lesson.payload.data().body }}</p>
 		</mat-card-content>

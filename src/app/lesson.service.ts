@@ -12,7 +12,7 @@ export class LessonService {
 	constructor(public db: AngularFirestore) { }
 
 	getLessons(): Observable<any> {
-		return this.db.collection('lessons').snapshotChanges();
+		return this.db.collection('lessons', ref => ref.orderBy('order')).snapshotChanges();
 	}
 
 	getLesson(id: string): Observable<any> {

@@ -1,6 +1,10 @@
 <mat-nav-list>
 	<h3 matSubheader>Lessons</h3>
-	<a mat-list-item *ngFor="let lesson of lessons" routerLink="/lesson/{{ lesson.payload.doc.id }}">
+	<a
+		mat-list-item
+		*ngFor="let lesson of lessons"
+		routerLink="/lesson/{{ lesson.payload.doc.id }}"
+		(click)="mobile && sidenav.toggle()">
 		{{ lesson.payload.doc.data().title }}
 	</a>
 </mat-nav-list>

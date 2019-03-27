@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
+import {MediaMatcher} from '@angular/cdk/layout';
 import { AuthService } from '../auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LessonService } from '../lesson.service';
@@ -16,9 +17,15 @@ export interface UserOptionObject {
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+
+	mobileQuery: MediaQueryList;
+
+	private mobileQueryListener: () => void;
 
 	constructor(private authService: AuthService,
+				private changeDetectorRef: ChangeDetectorRef,
+				private media: MediaMatcher,
 				private route: ActivatedRoute,
 				private router: Router,
 				private lessonService: LessonService) {
@@ -26,12 +33,16 @@ export class HomeComponent implements OnInit {
 			this.getUser();
 			this.getLesson();
 		});
+
+		this.mobileQuery = media.matchMedia('(max-width: 600px)');
+		this.mobileQueryListener = () => changeDetectorRef.detectChanges();
+		this.mobileQuery.addListener(this.mobileQueryListener);
 	}
 
 	title: string = 'TheLessonBox';
 	username: string = 'New User';
 	lesson;
-	opened: boolean;
+	opened: boolean = true;
 
 	getUser(): void {
 		let user = this.authService.isLoggedIn();
@@ -49,15 +60,19 @@ export class HomeComponent implements OnInit {
 	}
 
 	userOptions: UserOptionObject[] = [
-		{ value: 'edit', viewValue: 'Edit Details', event: (): void => { } },
-		{ value: 'stats', viewValue: 'See Stats', event: (): void => { } },
-		{ value: 'friends', viewValue: 'Compare Against Friends', event: (): void => { } },
+		// { value: 'edit', viewValue: 'Edit Details', event: (): void => { } },
+		// { value: 'stats', viewValue: 'See Stats', event: (): void => { } },
+		// { value: 'friends', viewValue: 'Compare Against Friends', event: (): void => { } },
 		{ value: 'logout', viewValue: 'Log Out', event: (): void => { this.authService.logout() } }
 	]
 
 	ngOnInit() {
 		this.getUser();
 		this.getLesson();
+	}
+
+	ngOnDestroy(): void {
+		this.mobileQuery.removeListener(this.mobileQueryListener);
 	}
 
 }

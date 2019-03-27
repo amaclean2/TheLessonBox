@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
@@ -25,14 +24,20 @@ export class AuthService {
 
 	private user: Observable<firebase.User>;
 	userDetails;
+	public message: string = '';
 
 	signInWithGoogle() {
-		this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-			.then( response => {
-				this.router.navigate(['home']);
-			}).catch( err => {
-				
-			})
+		let provider = new firebase.auth.GoogleAuthProvider();
+		return this.afAuth.auth.signInWithPopup(provider);
+	}
+
+	signInWithAnonymous() {
+		return this.afAuth.auth.signInAnonymously()
+	}
+
+	signInWithFacebook() {
+		let provider = new firebase.auth.FacebookAuthProvider();
+		return this.afAuth.auth.signInWithPopup(provider)
 	}
 
 	isLoggedIn() {

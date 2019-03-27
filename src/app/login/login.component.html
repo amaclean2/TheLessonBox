@@ -2,11 +2,24 @@
 	<mat-card align="center">
 		<mat-card-title>Login to The Lesson Box</mat-card-title>
 		<mat-card-content>
+			<div class="error-messages">
+				{{ message }}
+			</div>
+			<button
+				mat-button
+				class="google-button"
+				(click)="googleLogin()">
+			</button>
+			<button
+				class="facebook-button"
+				mat-raised-button
+				(click)="facebookLogin()">
+				<i class="fa fa-facebook-official"></i>Login With Facebook
+			</button>
 			<button
 				mat-raised-button
-				color="accent"
-				(click)="googleLogin()">
-				Sign In With Google
+				(click)="anonymousLogin()">
+				Login Without Creating an Account
 			</button>
 		</mat-card-content>
 	</mat-card>

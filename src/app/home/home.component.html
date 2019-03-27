@@ -1,5 +1,5 @@
 <mat-sidenav-container class="home-container">
-	<mat-sidenav #sidenav mode="over" [(opened)]="opened">
+	<mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [(opened)]="opened">
 		<mat-toolbar color="primary">
 			<mat-toolbar-row>
 					<button mat-button [matMenuTriggerFor]="menu">{{ username }}</button>
@@ -13,7 +13,8 @@
 					</mat-menu>
 			</mat-toolbar-row>
 		</mat-toolbar>
-		<app-selector></app-selector>
+		<app-selector [sidenav]="sidenav" [mobile]="mobileQuery.matches">
+		</app-selector>
 	</mat-sidenav>
 
 	<mat-sidenav-content>

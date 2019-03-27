@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LessonService } from '../lesson.service';
 import { Lesson } from '../lesson';
 
@@ -9,6 +9,9 @@ import { Lesson } from '../lesson';
 })
 export class SelectorComponent implements OnInit {
 
+  @Input() sidenav;
+  @Input() mobile;
+
   constructor(private lessonService: LessonService) { }
 
   lessons: Array<any>;
@@ -16,7 +19,7 @@ export class SelectorComponent implements OnInit {
   getLessons(): void {
     this.lessonService.getLessons()
       .subscribe(lessons => {
-        this.lessons = lessons.reverse();
+        this.lessons = lessons;
       });
   }
 

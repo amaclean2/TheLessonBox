@@ -1,3 +1,42 @@
 mat-card {
     max-width: 400px;
 }
+
+.login-page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        margin: 10px;
+    }
+
+    .facebook-button {
+        background-color: #4767b2;
+        color: #FFF;
+
+        i {
+            font-size: 25px;
+            margin-right: 10px;
+        }
+    }
+
+    .google-button {
+        background-image: url('../images/btn_google_signin_light_normal_web@2x.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 203px;
+        height: 49px;
+        margin-bottom: 7px;
+    }
+
+    .error-messages {
+        color: #ff0000;
+        margin: 20px;
+    }
+}
