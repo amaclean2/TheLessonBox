@@ -41,8 +41,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 	title: string = 'TheLessonBox';
 	username: string = 'New User';
-	lesson;
 	opened: boolean = true;
+	lesson;
 
 	getUser(): void {
 		let user = this.authService.isLoggedIn();
@@ -53,9 +53,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 		const id = this.route.snapshot.paramMap.get('id');
 		if(id) {
 			this.lessonService.getLesson(id)
-			.subscribe(lesson => {
-				this.lesson = lesson;
-			});
+				.subscribe(lesson => {
+					this.lesson = lesson.payload;
+				});
+		} else {
+			this.lessonService.getMostRecentLesson()
+				.subscribe(lessons => {
+					this.lesson = lessons[0].payload.doc;
+				});
 		}
 	}
 

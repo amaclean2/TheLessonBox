@@ -18,4 +18,10 @@ export class LessonService {
 	getLesson(id: string): Observable<any> {
 		return this.db.collection('lessons').doc(id).snapshotChanges();
 	}
+
+	getMostRecentLesson(): Observable<any> {
+		return this.db.collection('lessons', ref => ref.orderBy('order', 'desc').limit(1)).snapshotChanges();
+	}
+
+	
 }

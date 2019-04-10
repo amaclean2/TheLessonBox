@@ -1,29 +1,29 @@
 <div class="lesson-content">
 	<mat-card>
 		<mat-card-title>
-			{{ lesson.payload.data().title }}
+			{{ lesson.data().title }}
 		</mat-card-title>
 		<mat-card-content>
-			<p>{{ lesson.payload.data().body }}</p>
+			<p>{{ lesson.data().body }}</p>
 		</mat-card-content>
 	</mat-card>
 	<mat-card>
 		<mat-card-header>
 			<mat-card-title>
-				{{ lesson.payload.data().example }}
+				{{ lesson.data().example }}
 			</mat-card-title>
 		</mat-card-header>
 		<mat-card-content>
-			<p>{{ lesson.payload.data().description }}</p>
+			<p>{{ lesson.data().description }}</p>
 		</mat-card-content>
 	</mat-card>
-	<mat-card class="editor-card" *ngIf="lesson.payload.data().isExercise">
+	<mat-card class="editor-card" *ngIf="lesson.data().isExercise">
 		<mat-card-content>
-			<textarea class="code-editor">{{ lesson.payload.data().exercise }}</textarea>
+			<app-ce (getCode)="getCode(code)" [lesson]="lesson"></app-ce>
 		</mat-card-content>
 		<mat-card-actions align="end">
-			<button mat-raised-button color="primary">Run</button>
-			<button mat-raised-button color="accent" >Submit</button>
+			<button mat-raised-button disabled color="primary">Run</button>
+			<button mat-raised-button color="accent" (click)="getCode()" >Submit</button>
 		</mat-card-actions>
 	</mat-card>
 </div>

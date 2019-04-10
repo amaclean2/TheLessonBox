@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
-
-import { Lesson } from '../lesson';
+import { Component, Input, OnInit } from '@angular/core';
+import { CodeService } from '../code.service';
 
 @Component({
 	selector: 'app-content',
@@ -9,6 +8,27 @@ import { Lesson } from '../lesson';
 })
 export class ContentComponent {
 
+	constructor( private codeService: CodeService ) {}
+
+	fileUrl: string;
+
 	@Input() lesson;
+
+	submitCode(): void {
+		console.log('code submitted');
+	}
+
+	getCode(someCode): string {
+		console.log('gotten', someCode);
+		return '';
+	}
+
+	loadCode() {
+		this.codeService.getCode('ExerciseOne.txt')
+	}
+
+	ngOnInit() {
+		this.loadCode();
+	}
 
 }

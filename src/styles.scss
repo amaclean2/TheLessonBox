@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:500');
 
 mat-sidenav {
     width: 260px;
@@ -21,7 +22,7 @@ mat-sidenav {
     border: 1px solid #CCC;
     border-radius: 3px;
     resize: none;
-    font-family: monospace;
+    font-family: 'Roboto Mono', arial;
     font-size: 14px;
     outline: none;
 }

@@ -25,6 +25,7 @@
     "angularfire2": "^5.1.2",
     "core-js": "^2.5.4",
     "firebase": "^5.9.1",
+    "ng4-codemirror": "0.0.1",
     "node-sass": "^4.11.0",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
