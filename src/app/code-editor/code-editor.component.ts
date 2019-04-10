@@ -9,7 +9,6 @@ import { E } from '@angular/core/src/render3';
 export class CodeEditorComponent implements OnInit {
 
 	@Input() lesson
-	@Input() getCode
 
 	constructor() { }
 
@@ -17,12 +16,6 @@ export class CodeEditorComponent implements OnInit {
 
 	formatText(text) {
 		return text;
-	}
-
-	getCode('new code');
-
-	handleTyping(e) {
-		e.target.innerHTML = this.formatText(e.target.innerText);
 	}
 
 	ngOnInit() {

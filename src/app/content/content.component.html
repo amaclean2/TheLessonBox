@@ -4,7 +4,7 @@
 			{{ lesson.data().title }}
 		</mat-card-title>
 		<mat-card-content>
-			<p>{{ lesson.data().body }}</p>
+			<p>{{ bio }}</p>
 		</mat-card-content>
 	</mat-card>
 	<mat-card>
@@ -19,7 +19,8 @@
 	</mat-card>
 	<mat-card class="editor-card" *ngIf="lesson.data().isExercise">
 		<mat-card-content>
-			<app-ce (getCode)="getCode(code)" [lesson]="lesson"></app-ce>
+			<div contenteditable="true" class="code-editor">{{ lesson.data().exercise }}</div>
+			<!-- <app-ce (getCode)="getCode(code)" [lesson]="lesson"></app-ce> -->
 		</mat-card-content>
 		<mat-card-actions align="end">
 			<button mat-raised-button disabled color="primary">Run</button>
